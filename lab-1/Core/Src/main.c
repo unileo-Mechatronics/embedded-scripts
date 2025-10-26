@@ -121,7 +121,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   int c = 5;
-  int result = bar(c);
+  // int result = bar(c);
 
   /* USER CODE END 2 */
 
