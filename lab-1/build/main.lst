@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccgalnVP.s 			page 1
+ARM GAS  /tmp/ccVHwI0O.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
   30:Core/Src/main.c **** /* Includes ------------------------------------------------------------------*/
   31:Core/Src/main.c **** #include "main.h"
   32:Core/Src/main.c **** 
-ARM GAS  /tmp/ccgalnVP.s 			page 2
+ARM GAS  /tmp/ccVHwI0O.s 			page 2
 
 
   33:Core/Src/main.c **** /* Private includes ----------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
   87:Core/Src/main.c **** /* USER CODE END 0 */
   88:Core/Src/main.c **** 
   89:Core/Src/main.c **** /**
-ARM GAS  /tmp/ccgalnVP.s 			page 3
+ARM GAS  /tmp/ccVHwI0O.s 			page 3
 
 
   90:Core/Src/main.c ****   * @brief  The application entry point.
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  144:Core/Src/main.c ****     Error_Handler();
  145:Core/Src/main.c ****   }
  146:Core/Src/main.c **** 
-ARM GAS  /tmp/ccgalnVP.s 			page 4
+ARM GAS  /tmp/ccVHwI0O.s 			page 4
 
 
  147:Core/Src/main.c ****   /* Infinite loop */
@@ -189,7 +189,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  152:Core/Src/main.c ****     /* USER CODE END WHILE */
  153:Core/Src/main.c **** 
  154:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
- 155:Core/Src/main.c ****     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+ 155:Core/Src/main.c ****     HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_1);
  156:Core/Src/main.c ****     HAL_Delay(1000);
  157:Core/Src/main.c ****   }
  158:Core/Src/main.c ****   /* USER CODE END 3 */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  201:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
  202:Core/Src/main.c ****   */
  203:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-ARM GAS  /tmp/ccgalnVP.s 			page 5
+ARM GAS  /tmp/ccVHwI0O.s 			page 5
 
 
  204:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
   51              		.loc 1 233 3 view .LVU7
   52              	.LBB5:
   53              		.loc 1 233 3 view .LVU8
-ARM GAS  /tmp/ccgalnVP.s 			page 6
+ARM GAS  /tmp/ccVHwI0O.s 			page 6
 
 
   54              		.loc 1 233 3 view .LVU9
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
   96 0002 84B0     		sub	sp, sp, #16
   97              	.LCFI3:
   98              		.cfi_def_cfa_offset 24
-ARM GAS  /tmp/ccgalnVP.s 			page 7
+ARM GAS  /tmp/ccVHwI0O.s 			page 7
 
 
  248:Core/Src/main.c ****   MPU_Region_InitTypeDef MPU_InitStruct = {0};
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  137              		.loc 1 263 30 is_stmt 0 view .LVU35
  138 0036 8DF80D30 		strb	r3, [sp, #13]
  264:Core/Src/main.c ****   MPU_InitStruct.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
-ARM GAS  /tmp/ccgalnVP.s 			page 8
+ARM GAS  /tmp/ccVHwI0O.s 			page 8
 
 
  139              		.loc 1 264 3 is_stmt 1 view .LVU36
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  183 0004 7047     		bx	lr
  184              		.cfi_endproc
  185              	.LFE147:
-ARM GAS  /tmp/ccgalnVP.s 			page 9
+ARM GAS  /tmp/ccVHwI0O.s 			page 9
 
 
  187              		.section	.text.bar,"ax",%progbits
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  233              		.thumb
  234              		.thumb_func
  236              	Error_Handler:
-ARM GAS  /tmp/ccgalnVP.s 			page 10
+ARM GAS  /tmp/ccVHwI0O.s 			page 10
 
 
  237              	.LFB153:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
   34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
   35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
   36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
-ARM GAS  /tmp/ccgalnVP.s 			page 11
+ARM GAS  /tmp/ccVHwI0O.s 			page 11
 
 
   37:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
   91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
   92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
   93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  /tmp/ccgalnVP.s 			page 12
+ARM GAS  /tmp/ccVHwI0O.s 			page 12
 
 
   94:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  148:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_start__;
  149:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_end__;
  150:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccgalnVP.s 			page 13
+ARM GAS  /tmp/ccVHwI0O.s 			page 13
 
 
  151:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__copy_table_t const* pTable = &__copy_table_start__; pTable < &__copy_table_end__; ++pTable
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  205:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
  206:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  207:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
-ARM GAS  /tmp/ccgalnVP.s 			page 14
+ARM GAS  /tmp/ccVHwI0O.s 			page 14
 
 
  248              		.loc 2 207 27 view .LVU60
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  168:Core/Src/main.c **** 
  295              		.loc 1 168 3 is_stmt 1 view .LVU68
  168:Core/Src/main.c **** 
-ARM GAS  /tmp/ccgalnVP.s 			page 15
+ARM GAS  /tmp/ccVHwI0O.s 			page 15
 
 
  296              		.loc 1 168 22 is_stmt 0 view .LVU69
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  336              		.loc 1 183 36 is_stmt 0 view .LVU83
  337 0044 0222     		movs	r2, #2
  338 0046 0992     		str	r2, [sp, #36]
-ARM GAS  /tmp/ccgalnVP.s 			page 16
+ARM GAS  /tmp/ccVHwI0O.s 			page 16
 
 
  184:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = 64;
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  373 0064 1991     		str	r1, [sp, #100]
  194:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLFRACN = 0;
  374              		.loc 1 194 3 is_stmt 1 view .LVU104
-ARM GAS  /tmp/ccgalnVP.s 			page 17
+ARM GAS  /tmp/ccVHwI0O.s 			page 17
 
 
  194:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLFRACN = 0;
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  410              		.loc 1 211 3 is_stmt 1 view .LVU123
  211:Core/Src/main.c ****   RCC_ClkInitStruct.APB4CLKDivider = RCC_APB4_DIV2;
  411              		.loc 1 211 36 is_stmt 0 view .LVU124
-ARM GAS  /tmp/ccgalnVP.s 			page 18
+ARM GAS  /tmp/ccVHwI0O.s 			page 18
 
 
  412 0088 4FF48062 		mov	r2, #1024
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  459              		.cfi_startproc
  460              		@ args = 0, pretend = 0, frame = 0
  461              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccgalnVP.s 			page 19
+ARM GAS  /tmp/ccVHwI0O.s 			page 19
 
 
  462 0000 08B5     		push	{r3, lr}
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  503              		.loc 1 138 25 is_stmt 0 view .LVU146
  504 0034 0020     		movs	r0, #0
  505 0036 4860     		str	r0, [r1, #4]
-ARM GAS  /tmp/ccgalnVP.s 			page 20
+ARM GAS  /tmp/ccVHwI0O.s 			page 20
 
 
  139:Core/Src/main.c ****   BspCOMInit.Parity     = COM_PARITY_NONE;
@@ -1170,7 +1170,7 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  522              		.loc 1 149 3 is_stmt 1 view .LVU156
  155:Core/Src/main.c ****     HAL_Delay(1000);
  523              		.loc 1 155 5 view .LVU157
- 524 0044 2021     		movs	r1, #32
+ 524 0044 0221     		movs	r1, #2
  525 0046 0648     		ldr	r0, .L28+4
  526 0048 FFF7FEFF 		bl	HAL_GPIO_TogglePin
  527              	.LVL25:
@@ -1191,14 +1191,14 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  539 005a 00BF     		.align	2
  540              	.L28:
  541 005c 00000000 		.word	BspCOMInit
- 542 0060 00000258 		.word	1476526080
+ 542 0060 00100258 		.word	1476530176
  543              		.cfi_endproc
  544              	.LFE149:
  546              		.global	j
  547              		.section	.bss.j,"aw",%nobits
  548              		.align	2
  551              	j:
-ARM GAS  /tmp/ccgalnVP.s 			page 21
+ARM GAS  /tmp/ccVHwI0O.s 			page 21
 
 
  552 0000 00000000 		.space	4
@@ -1227,34 +1227,34 @@ ARM GAS  /tmp/ccgalnVP.s 			page 1
  576              		.file 10 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
  577              		.file 11 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h"
  578              		.file 12 "<built-in>"
-ARM GAS  /tmp/ccgalnVP.s 			page 22
+ARM GAS  /tmp/ccVHwI0O.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/ccgalnVP.s:20     .text.MX_GPIO_Init:00000000 $t
-     /tmp/ccgalnVP.s:25     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-     /tmp/ccgalnVP.s:75     .text.MX_GPIO_Init:00000038 $d
-     /tmp/ccgalnVP.s:80     .text.MPU_Config:00000000 $t
-     /tmp/ccgalnVP.s:85     .text.MPU_Config:00000000 MPU_Config
-     /tmp/ccgalnVP.s:163    .text.foo:00000000 $t
-     /tmp/ccgalnVP.s:169    .text.foo:00000000 foo
-     /tmp/ccgalnVP.s:188    .text.bar:00000000 $t
-     /tmp/ccgalnVP.s:194    .text.bar:00000000 bar
-     /tmp/ccgalnVP.s:230    .text.Error_Handler:00000000 $t
-     /tmp/ccgalnVP.s:236    .text.Error_Handler:00000000 Error_Handler
-     /tmp/ccgalnVP.s:268    .text.SystemClock_Config:00000000 $t
-     /tmp/ccgalnVP.s:274    .text.SystemClock_Config:00000000 SystemClock_Config
-     /tmp/ccgalnVP.s:445    .text.SystemClock_Config:000000a8 $d
-     /tmp/ccgalnVP.s:450    .text.main:00000000 $t
-     /tmp/ccgalnVP.s:456    .text.main:00000000 main
-     /tmp/ccgalnVP.s:541    .text.main:0000005c $d
-     /tmp/ccgalnVP.s:565    .bss.BspCOMInit:00000000 BspCOMInit
-     /tmp/ccgalnVP.s:551    .bss.j:00000000 j
-     /tmp/ccgalnVP.s:548    .bss.j:00000000 $d
-     /tmp/ccgalnVP.s:558    .bss.k:00000000 k
-     /tmp/ccgalnVP.s:555    .bss.k:00000000 $d
-     /tmp/ccgalnVP.s:562    .bss.BspCOMInit:00000000 $d
+     /tmp/ccVHwI0O.s:20     .text.MX_GPIO_Init:00000000 $t
+     /tmp/ccVHwI0O.s:25     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+     /tmp/ccVHwI0O.s:75     .text.MX_GPIO_Init:00000038 $d
+     /tmp/ccVHwI0O.s:80     .text.MPU_Config:00000000 $t
+     /tmp/ccVHwI0O.s:85     .text.MPU_Config:00000000 MPU_Config
+     /tmp/ccVHwI0O.s:163    .text.foo:00000000 $t
+     /tmp/ccVHwI0O.s:169    .text.foo:00000000 foo
+     /tmp/ccVHwI0O.s:188    .text.bar:00000000 $t
+     /tmp/ccVHwI0O.s:194    .text.bar:00000000 bar
+     /tmp/ccVHwI0O.s:230    .text.Error_Handler:00000000 $t
+     /tmp/ccVHwI0O.s:236    .text.Error_Handler:00000000 Error_Handler
+     /tmp/ccVHwI0O.s:268    .text.SystemClock_Config:00000000 $t
+     /tmp/ccVHwI0O.s:274    .text.SystemClock_Config:00000000 SystemClock_Config
+     /tmp/ccVHwI0O.s:445    .text.SystemClock_Config:000000a8 $d
+     /tmp/ccVHwI0O.s:450    .text.main:00000000 $t
+     /tmp/ccVHwI0O.s:456    .text.main:00000000 main
+     /tmp/ccVHwI0O.s:541    .text.main:0000005c $d
+     /tmp/ccVHwI0O.s:565    .bss.BspCOMInit:00000000 BspCOMInit
+     /tmp/ccVHwI0O.s:551    .bss.j:00000000 j
+     /tmp/ccVHwI0O.s:548    .bss.j:00000000 $d
+     /tmp/ccVHwI0O.s:558    .bss.k:00000000 k
+     /tmp/ccVHwI0O.s:555    .bss.k:00000000 $d
+     /tmp/ccVHwI0O.s:562    .bss.BspCOMInit:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_MPU_Disable

@@ -2251,26 +2251,26 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/libgcc.a
  .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/libgcc.a(_udivmoddi4.o)
  .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/crtend.o
 
-.debug_info     0x00000000    0x1445c
- .debug_info    0x00000000     0x105a build/main.o
- .debug_info    0x0000105a      0x1d5 build/stm32h7xx_it.o
- .debug_info    0x0000122f      0x537 build/stm32h7xx_hal_msp.o
- .debug_info    0x00001766     0x20d1 build/stm32h7xx_nucleo.o
- .debug_info    0x00003837     0x154c build/stm32h7xx_hal_cortex.o
- .debug_info    0x00004d83     0x128d build/stm32h7xx_hal_rcc.o
- .debug_info    0x00006010     0x1c52 build/stm32h7xx_hal_rcc_ex.o
- .debug_info    0x00007c62      0xee8 build/stm32h7xx_hal_gpio.o
- .debug_info    0x00008b4a     0x113d build/stm32h7xx_hal_pwr_ex.o
- .debug_info    0x00009c87     0x1a8d build/stm32h7xx_hal.o
- .debug_info    0x0000b714      0xb51 build/stm32h7xx_hal_exti.o
- .debug_info    0x0000c265     0x6ab0 build/stm32h7xx_hal_uart.o
- .debug_info    0x00012d15      0xd82 build/system_stm32h7xx.o
- .debug_info    0x00013a97       0x30 build/startup_stm32h723xx.o
- .debug_info    0x00013ac7      0x10b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/libc_nano.a(libc_a-init.o)
- .debug_info    0x00013bd2      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/libc_nano.a(libc_a-memset.o)
- .debug_info    0x00013d07       0x24 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_info    0x00013d2b      0x6f5 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/libgcc.a(_udivmoddi4.o)
- .debug_info    0x00014420       0x3c /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/libgcc.a(_dvmd_tls.o)
+.debug_info     0x00000000    0x1445b
+ .debug_info    0x00000000     0x1059 build/main.o
+ .debug_info    0x00001059      0x1d5 build/stm32h7xx_it.o
+ .debug_info    0x0000122e      0x537 build/stm32h7xx_hal_msp.o
+ .debug_info    0x00001765     0x20d1 build/stm32h7xx_nucleo.o
+ .debug_info    0x00003836     0x154c build/stm32h7xx_hal_cortex.o
+ .debug_info    0x00004d82     0x128d build/stm32h7xx_hal_rcc.o
+ .debug_info    0x0000600f     0x1c52 build/stm32h7xx_hal_rcc_ex.o
+ .debug_info    0x00007c61      0xee8 build/stm32h7xx_hal_gpio.o
+ .debug_info    0x00008b49     0x113d build/stm32h7xx_hal_pwr_ex.o
+ .debug_info    0x00009c86     0x1a8d build/stm32h7xx_hal.o
+ .debug_info    0x0000b713      0xb51 build/stm32h7xx_hal_exti.o
+ .debug_info    0x0000c264     0x6ab0 build/stm32h7xx_hal_uart.o
+ .debug_info    0x00012d14      0xd82 build/system_stm32h7xx.o
+ .debug_info    0x00013a96       0x30 build/startup_stm32h723xx.o
+ .debug_info    0x00013ac6      0x10b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/libc_nano.a(libc_a-init.o)
+ .debug_info    0x00013bd1      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard/libc_nano.a(libc_a-memset.o)
+ .debug_info    0x00013d06       0x24 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x00013d2a      0x6f5 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_info    0x0001441f       0x3c /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+dp/hard/libgcc.a(_dvmd_tls.o)
 
 .debug_abbrev   0x00000000     0x230e
  .debug_abbrev  0x00000000      0x305 build/main.o
