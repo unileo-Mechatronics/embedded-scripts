@@ -21,6 +21,7 @@ LEONARDO PASQUATO
 
 NOTES ABOUT THE BUG
 This code remains stuck inside the loop for wrong increment position: postdecrementing b in bar function while doing the recursive call, does not update instantly the value of b: indeed the same function is recursevely called, but the value of b as input is updated only after the call, so it is completely useless and the code stucks in a loop in this recursive call. In order to solve this, b varaible should be predecremented, so --b.
+In the actual code the bug is corrected, so --b is written.
 
 DEBUGGING
 This issue was found both by intuition because I already have some expertise on C and in particular stm32 programming and by debugging with GDB: a simple breakpoint placed before the recursive call inside  bar function and another breakpoint  before return foo(b) still in bar function were enough to understand: the second breakpoint is never triggered if b is postdecremented.
@@ -75,7 +76,7 @@ int foo(int a){
 
 int bar(int b){
   if(b > 3){
-    return bar(b--);
+    return bar(--b);
   
   }
   return foo(b);
@@ -125,7 +126,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   int c = 5;
-  // int result = bar(c);
+  int result = bar(c);
 
   /* USER CODE END 2 */
 
