@@ -27,7 +27,8 @@ DEBUGGING
 This issue was found both by intuition because I already have some expertise on C and in particular stm32 programming and by debugging with GDB: a simple breakpoint placed before the recursive call inside  bar function and another breakpoint  before return foo(b) still in bar function were enough to understand: the second breakpoint is never triggered if b is postdecremented.
 
 SETUP CONFIGURATION
-Peresolly, I prefer to use just CubeMX for the microcontrollers pins' configuration, so I can write code in a more comfortable way using VSCode. From CubeMX I generete the code setting the Makefile as building tool, so I can build it manually and then flash it using openocd via command line. Otherwise, I use the STM32 VSCode extension (not the official one cause it's still not working) as well.
+For this assignment an H723ZG nucleo is used.
+Personally, I prefer to use just CubeMX for the microcontrollers pins' configuration, so I can write code in a more comfortable way using VSCode. From CubeMX I generete the code setting the Makefile as building tool, so I can build it manually and then flash it using openocd via command line. Otherwise, I use the STM32 VSCode extension (not the official one cause it's still not working) as well.
 
 */
 
