@@ -1,2 +1,16 @@
+
+**/build/
+**/Build/
+**/Debug/
+**/Release/
+
+**/Drivers/
+**/CM7/Drivers/
+**/CM4/Drivers/
+
+*.launch
+*.settings/
+*.project
+*.cproject
 /Drivers/
 /build

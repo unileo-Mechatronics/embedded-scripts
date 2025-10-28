@@ -19,19 +19,15 @@
 /*
 LEONARDO PASQUATO
 
-NOTES ABOUT THE BUG
-This code remains stuck inside the loop for wrong increment position: postdecrementing b in bar function while doing the recursive call, does not update instantly the value of b: indeed the same function is recursevely called, but the value of b as input is updated only after the call, so it is completely useless and the code stucks in a loop in this recursive call. In order to solve this, b varaible should be predecremented, so --b.
-In the actual code the bug is corrected, so --b is written.
+NOTES ABOUT THE ASSIGNMENT
+The purpose of this code is to get expertise on the use of interrupts and clock ticks using HAL functions and methods.
+In particular, in this implementation I used static volatile variables as flags in order to store the moment in which the button is pressed and the moment when the button is released. "static" is used in order to have a centralized istance of a variable and "volatile" is used in order to be possible of reassign them inside the interrupt handler.
+It would be possible to use just one of them but this implies to implement a busy waiting like algorithm that is very inefficient.
+In the body of the interrupt handler it's implemented a simple task: when the button is pressed, it simply toggles the second led, but if it is pressed for a time interval included between 1 and 4 seconds, it starts blinking the second led and if the button is pressed for more than 4 seconds it starts blinking the third led. In hte meantime, the first led keeps blinking so it's possible to notice that in this tthe busy waiting is avoided.
+A little debouning is implemented as well: if the button is pressed for less than 10ms, the handler just does nothing.
 
-DEBUGGING
-This issue was found both by intuition because I already have some expertise on C and in particular stm32 programming and by debugging with GDB: a simple breakpoint placed before the recursive call inside  bar function and another breakpoint  before return foo(b) still in bar function were enough to understand: the second breakpoint is never triggered if b is postdecremented.
-
-SETUP CONFIGURATION
-For this assignment an H723ZG nucleo is used.
-Personally, I prefer to use just CubeMX for the microcontrollers pins' configuration, so I can write code in a more comfortable way using VSCode. From CubeMX I generete the code setting the Makefile as building tool, so I can build it manually and then flash it using openocd via command line. Otherwise, I use the STM32 VSCode extension (not the official one cause it's still not working) as well.
 
 */
-
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -74,8 +70,12 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int k = 0;
-int j = 0;
+
+volatile static uint8_t toggle2_max = 0;
+volatile static uint8_t toggle3_max = 0;
+volatile static uint32_t toggle_start = 0;
+volatile static uint32_t toggle_end = 0;
+volatile static uint8_t toggle_pressed = 0;
 
 /* USER CODE END 0 */
 
@@ -120,9 +120,6 @@ int main(void)
   BSP_LED_Init(LED_YELLOW);
   BSP_LED_Init(LED_RED);
 
-  /* Initialize USER push-button, will be used to trigger an interrupt each time it's pressed.*/
-  BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
-
   /* Initialize COM1 port (115200, 8 bits (7-bit data + 1 stop bit), no parity */
   BspCOMInit.BaudRate   = 115200;
   BspCOMInit.WordLength = COM_WORDLENGTH_8B;
@@ -136,43 +133,23 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
   while (1)
   {
 
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    // HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_1);
+    HAL_GPIO_TogglePin(LED1_GPIO_PORT, LED1_PIN);
 
-    // -------------- POLLING -----------------
-    /*
-    if(HAL_GPIO_ReadPin(BUTTON_USER_GPIO_PORT, BUTTON_USER_PIN)){
-
-      HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
+    if(toggle2_max){
+      HAL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN);
     }
 
-    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
-    HAL_Delay(10);
-    */
-
-    // -------------- INTERRUPT ---------------
-
-
-
-    /*
-    if(HAL_GetTick() - led_start > 500){
-
-      HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_1);
-
-      if(HAL_GetTick() - led_start > 1000){
-        
-        led_start = HAL_GetTick();
-      }
+    if(toggle3_max){
+      HAL_GPIO_TogglePin(LED3_GPIO_PORT, LED3_PIN);
     }
 
-    */
-    // HAL_Delay(500);
+    HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }
@@ -254,7 +231,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
@@ -269,18 +246,50 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    // if(GPIO_Pin == GPIO_PIN_13)
-    // {
-    //    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
-    //    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
-    //    HAL_Delay(10);
-    // }
 
+  uint32_t tmp = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
+  
+  if(tmp == GPIO_PIN_SET){
     HAL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN);
-}
 
+    toggle_start = HAL_GetTick();
+    toggle_pressed = 1;
+
+    toggle2_max = 0;
+    toggle3_max = 0;
+
+  }
+  
+  if(tmp == GPIO_PIN_RESET){
+
+    toggle_end = HAL_GetTick();
+
+    if(toggle_pressed){
+
+      uint32_t delta = toggle_end - toggle_start;
+      if(delta < 10U){
+
+        return; // debouncing
+      }
+
+      if(delta > 1000U){
+        toggle2_max = 1;
+
+      }
+      if(delta > 4000U){
+          toggle2_max = 0;
+          toggle3_max = 1; // blink 
+
+      }
+    }
+
+    toggle_pressed = 0;
+  }
+  
+}
 
 /* USER CODE END 4 */
 
