@@ -23,7 +23,8 @@ NOTES ABOUT THE ASSIGNMENT
 The purpose of this code is to get expertise on the use of interrupts and clock ticks using HAL functions and methods.
 In particular, in this implementation I used static volatile variables as flags in order to store the moment in which the button is pressed and the moment when the button is released. "static" is used in order to have a centralized istance of a variable and "volatile" is used in order to be possible of reassign them inside the interrupt handler.
 It would be possible to use just one of them but this implies to implement a busy waiting like algorithm that is very inefficient.
-In the body of the interrupt handler it's implemented a simple task: when the button is pressed, it simply toggles the second led, but if it is pressed for a time interval included between 1 and 4 seconds, it starts blinking the second led and if the button is pressed for more than 4 seconds it starts blinking the third led. In hte meantime, the first led keeps blinking so it's possible to notice that in this tthe busy waiting is avoided.
+Still, i am using an h723zg board, that embeds 3 leds and i will use all of the.
+In the body of the interrupt handler it's implemented a simple task: when the button is pressed, it simply toggles the second led, but if it is pressed for a time interval included between 1 and 4 seconds, it starts blinking the second led and if the button is pressed for more than 4 seconds it starts blinking the third led. In hte meantime, the first led keeps blinking so it's possible to notice that in this code the busy waiting is avoided.
 A little debouning is implemented as well: if the button is pressed for less than 10ms, the handler just does nothing.
 
 
